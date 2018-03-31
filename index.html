@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Sara's Tic-Tac-Toe</title>
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,8 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Sara's Tic-Tac-Toe Extravaganza
-      <h4>Haven't registered? Sign up now</h2>
+      <h1>Tic-Tac-Toe</h1>
+      <h4>Haven't registered? Sign up now</h4>
       <form id="sign-up" class="border">
         <fieldset>
           <legend>Sign up!</legend>
@@ -22,15 +22,46 @@
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit" value="Sign up!">
         </fieldset>
-      <h4>Already registered? Please sign in with your credentials.
+      </form>
+
+      <h4>Already registered? Please sign in with your credentials.</h4>
       <form id="sign-in" class="border">
         <fieldset>
             <legend>Sign in!</legend>
             <input type="text" name="credentials[email]" placeholder="Email">
             <input type="password" name="credentials[password]" placeholder="Password">
             <input type="password" name="credentials[password_confirmation]" placeholder="Password">
+            <input type="submit" value="Sign In!">
         </fieldset>
       </form>
-        <input type="submit" value="Sign out!">
+
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password!</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password!">
+        </fieldset>
+      </form>
+      <input type="submit" value="Sign out!">
+
+      <table>
+        <tr>
+          <td>X</td>
+          <td>O</td>
+          <td>X</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>X</td>
+          <td>O</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>O</td>
+          <td>X</td>
+        </tr>
+      </table>
+
     </body>
 </html>

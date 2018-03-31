@@ -1,2 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+td {
+  border: 1px solid #000;
+  height: 50px;
+  width: 50px;
+}
