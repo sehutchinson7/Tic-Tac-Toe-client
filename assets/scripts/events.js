@@ -1,6 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 
 const api = require('./api')
+const store = require('./store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -25,6 +26,13 @@ const onSignOut = function (event) {
   api.signOut()
 }
 
+const onPasswordSuccess = function (data) {
+  $('#message').text('Your password has been changed')
+  $('#message').css('background-color', 'green')
+  console.log('New password is:', data)
+  store.user = data.user
+}
+
 const onChangePassword = function (event) {
   event.preventDefault()
   console.log('change password ran!')
@@ -41,5 +49,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onPasswordSuccess
 }
