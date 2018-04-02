@@ -6,17 +6,19 @@ const gameArray = ['', '', '', '', '', '', '', '', '']
 const playerOne = 'X'
 const playerTwo = 'O'
 
-// Write a function that takes turns between plaer_one and player_two
-
 // Makes the table clickable
 const clickBoard = function () {
   $('.cell').on('click', function (event) {
     event.preventDefault() // Prevent default action
     console.log('You clicked me!', event.target) // Log the event.target
+    const id = this.id
+    console.log(id)
+    $('#' + id).text(this.id) // Displays ID of array on the game board
   })
 }
-clickBoard()
 
+clickBoard()
+// Take turns between two players
 module.exports = {
   gameArray,
   playerOne,

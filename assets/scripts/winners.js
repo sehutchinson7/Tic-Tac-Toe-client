@@ -31,12 +31,38 @@ const findWinner = function () {
   console.log ('Player 1 is the Winner!') //How do i tell it to stop the game?
   return (resetGame) //Calls on a functiont to clear the board if someone has won
 
-
+  // Take turns between Player 1 and Player 2
+  let turn = '' // Initiate play
+  const takeTurns = function (element) {
+    if (turn === playerOne) {
+      $(element.target).text()
+    } else {
+      $(element.target).text()
+    }
+  }
+  takeTurns()
 
   break; //Break out of the loop if a player has won
 }
 //const resetGame = function()
+const clickBoard = function () {
+  $('.cell').on('click', function (event) {
+    event.preventDefault() // Prevent default action
+    console.log('You clicked me!', event.target) // Log the event.target
+  })
+}
+clickBoard()
 
+// Take turns between Player 1 and Player 2
+let turn = '' // Initiate play
+const takeTurns = function (element) {
+  if (turn === playerOne) {
+    $(element.target).text()
+  } else {
+    $(element.target).text()
+  }
+}
+takeTurns()
 
 cont takeTurns = function () {
   initiateGame = 0
