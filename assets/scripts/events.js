@@ -16,7 +16,14 @@ const onSignIn = function (event) {
   console.log('sign in ran!')
 
   const data = getFormFields(this)
-  api.signIn(data)
+  api.signIn(data).then(signInSuccess)
+}
+
+const signInSuccess = function (data) {
+  $('#message').text('Signed in successfully')
+  $('#message').css('background-color', 'green')
+  console.log('signInSuccess ran. Data is ', data)
+  store.user = data.user
 }
 
 const onSignOut = function (event) {
@@ -24,13 +31,6 @@ const onSignOut = function (event) {
   console.log('sign out ran')
 
   api.signOut()
-}
-
-const onPasswordSuccess = function (data) {
-  $('#message').text('Your password has been changed')
-  $('#message').css('background-color', 'green')
-  console.log('New password is:', data)
-  store.user = data.user
 }
 
 const onChangePassword = function (event) {
@@ -49,6 +49,5 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers,
-  onPasswordSuccess
+  addHandlers
 }

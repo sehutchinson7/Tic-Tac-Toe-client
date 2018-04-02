@@ -3,9 +3,13 @@ const board = ['', '', '', //I know I need to create an empty array to represent
               '', '', '',
               '', '', '']
 
-const player_one = X; //I know I need to create a findWinner function that will loop through the array
+const player_one = 'X'; //I know I need to create a findWinner function that will loop through the array
                       //and find all the winning combinations on the board
-const player_two = O; //I want to assume that player 1 is always X and player 2 is always O
+const player_two = 'O'; //I want to assume that player 1 is always X and player 2 is always O
+
+const clickBoard = function(event) {
+  event.preventDefault()
+}
 
 const winningCombo = [
   [0, 1, 2], // Player wins top row
@@ -18,8 +22,13 @@ const winningCombo = [
   [2, 4, 6], //Player wins diagonally 45 degree angle
 ]
 
+//
 //I'm trying to write a function that will take turns between player_one (X)
 //and player_two (O)
+function playGame() {
+  document.querySelector(".start-game")
+  console.log(board)
+}
 
 if (turn) {
   game.player_one.playerMove();
@@ -37,6 +46,8 @@ const findWinner = function () {
   console.log ('Player 1 is the Winner!') //How do i tell it to stop the game?
   return (resetGame) //Calls on a functiont to clear the board if someone has won
 
-  break; //Break out of the loop if a player has one
+
+
+  break; //Break out of the loop if a player has won
 }
 //const resetGame = function()
