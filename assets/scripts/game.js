@@ -7,7 +7,7 @@ const playerOne = 'X'
 const playerTwo = 'O'
 
 // Makes the table clickable
-const clickBoard = function () {
+const addHandlers = function () {
   $('.cell').on('click', function (event) {
     event.preventDefault() // Prevent default action
     console.log('You clicked me!', event.target) // Log the event.target
@@ -17,11 +17,10 @@ const clickBoard = function () {
   })
 }
 
-clickBoard()
 // Take turns between two players
 module.exports = {
+  addHandlers,
   gameArray,
   playerOne,
-  playerTwo,
-  clickBoard
+  playerTwo
 }
