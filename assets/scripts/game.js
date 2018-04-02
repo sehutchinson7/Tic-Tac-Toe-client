@@ -22,7 +22,6 @@ const winningCombo = [
   [2, 4, 6], //Player wins diagonally 45 degree angle
 ]
 
-//
 //I'm trying to write a function that will take turns between player_one (X)
 //and player_two (O)
 function playGame() {

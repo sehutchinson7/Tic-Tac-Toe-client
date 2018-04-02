@@ -26,19 +26,18 @@ const signInSuccess = function (data) {
   store.user = data.user
 }
 
-const onSignOut = function (event) {
-  event.preventDefault()
-  console.log('sign out ran')
-
-  api.signOut()
-}
-
 const onChangePassword = function (event) {
   event.preventDefault()
   console.log('change password ran!')
 
   const data = getFormFields(this)
   api.changePassword(data)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  console.log('sign out ran')
+  api.signOut()
 }
 
 const addHandlers = () => {
