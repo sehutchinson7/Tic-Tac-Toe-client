@@ -77,3 +77,51 @@ game.player_one.playerMove();
 } else {
 game.player_two.playerMove();
 }
+
+const isAvailable = function () {
+  if (something === true )// use jquery to determine if cell is available and allow user to click
+    //call the function above that allows users to click into a cell
+  } else { // use jquery to determine if cell is taken
+    return messages.html('This cell has already been played!')
+  }
+
+})
+
+
+const findWinner = function () {
+  if (gameArray[winningCombo[0]] === 'X' && gameArray[winningCombo[1]] === 'X' && gameArray[winningCombo[2]] === 'X') {
+    console.log('Player 1 Wins!')
+  } else if (gameArray[winningCombo[0]] === 'O' && gameArray[winningCombo[1]] === 'O' && gameArray[winningCombo[2]] === 'O') {
+    console.log('Player 2 Wins!')
+  } else if (gameArray[winningCombo[0]] === 'X' && gameArray[winningCombo[4]] === 'X' && gameArray[winningCombo[8]] === 'X') {
+    console.log('Player 1 Wins!')
+  } else if (gameArray[winningCombo[0]] === 'O' && gameArray[winningCombo[4]] === 'O' && gameArray[winningCombo[8]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[2]] === 'X' && gameArray[winningCombo[5]] === 'X' && gameArray[winningCombo[8]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[2]] === 'O' && gameArray[winningCombo[5]] === 'O' && gameArray[winningCombo[8]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[0]] === 'X' && gameArray[winningCombo[3]] === 'X' && gameArray[winningCombo[6]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[0]] === 'O' && gameArray[winningCombo[3]] === 'O' && gameArray[winningCombo[6]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[6]] === 'X' && gameArray[winningCombo[7]] === 'X' && gameArray[winningCombo[8]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[6]] === 'O' && gameArray[winningCombo[7]] === 'O' && gameArray[winningCombo[8]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[3]] === 'X' && gameArray[winningCombo[4]] === 'X' && gameArray[winningCombo[5]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[3]] === 'O' && gameArray[winningCombo[4]] === 'O' && gameArray[winningCombo[5]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[1]] === 'X' && gameArray[winningCombo[4]] === 'X' && gameArray[winningCombo[7]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[1]] === 'O' && gameArray[winningCombo[4]] === 'O' && gameArray[winningCombo[7]] === 'O') {
+    console.log('Player 2 Wins')
+  } else if (gameArray[winningCombo[2]] === 'X' && gameArray[winningCombo[4]] === 'X' && gameArray[winningCombo[6]] === 'X') {
+    console.log('Player 1 Wins')
+  } else if (gameArray[winningCombo[2]] === 'O' && gameArray[winningCombo[4]] === 'O' && gameArray[winningCombo[6]] === 'O') {
+    console.log('Player 1 Wins')
+  } else {
+    return console.log('Tie Game!')
+  }
+})
