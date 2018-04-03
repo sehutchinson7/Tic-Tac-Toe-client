@@ -40,11 +40,18 @@ const onSignOut = function (event) {
   api.signOut()
 }
 
+const onNewGame = function (event) {
+  event.preventDefault()
+  console.log('clear board successful')
+  $('.cell').html('')
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#new-game').on('click', onNewGame)
 }
 
 module.exports = {

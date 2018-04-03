@@ -125,3 +125,12 @@ const findWinner = function () {
     return console.log('Tie Game!')
   }
 })
+
+const newGame = () => {
+  $('#new-game').on('click', function (event) {
+    event.preventDefault() // Prevent preventDefault
+    console.log('You clicked the button', event.target)
+    $(event.target).clear(gameArray)
+  }
+}
+  //<button id="newGame">onclick="playGame">New Game</button>
