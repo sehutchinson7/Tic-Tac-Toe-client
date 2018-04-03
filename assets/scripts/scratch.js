@@ -133,4 +133,78 @@ const newGame = () => {
     $(event.target).clear(gameArray)
   }
 }
+
+let currentPlayer = 'X' // Define currentPlayer to start as X
+// Makes the table clickable
+const addHandlers = function () {
+  $('.cell').on('click', function (event) {
+    event.preventDefault() // Prevent default action
+    console.log('You clicked me!', event.target) // Log the event.target
+    const id = this.id
+    console.log(id)
+    // ('#' + id).text(this.id)
+    // Displays ID of array on the game board
+    // Add currentPlayer token to event.target
+    $(event.target).text(currentPlayer)
+    gameArray[id] = currentPlayer
+
+    // log if a person won
+    findWinner()
+    if (currentPlayer === 'X') {
+      currentPlayer = 'O'
+    } else {
+      currentPlayer = 'X'
+    }
+  })
+}
   //<button id="newGame">onclick="playGame">New Game</button>
+
+  const addHandlers = function () {
+    $('.cell').on('click', function (event) {
+      event.preventDefault() // Prevent default action
+      console.log('You clicked me!', event.target) // Log the event.target
+      const id = this.id
+      console.log(id)
+      // ('#' + id).text(this.id)
+      // Displays ID of array on the game board
+      // Add currentPlayer token to event.target
+      $(event.target).text(currentPlayer)
+      gameArray[id] = currentPlayer
+      console.log(gameArray)
+      // log if a person won
+      findWinner()
+      if (this.innerHTML !== 'X' && this.innerHTML !== 'O') {
+        if (currentPlayer === 'X') {
+          currentPlayer = 'O'
+        } else {
+          currentPlayer = 'X'
+        }
+      }
+    })
+  }
+
+
+
+  const addHandlers = function (event) {
+    $('.cell').on('click', function () {
+      event.preventDefault() // Prevent default action
+      console.log('You clicked me!', event.target) // Log the event.target
+      const id = this.id
+      console.log(id)
+      // ('#' + id).text(this.id)
+      // Displays ID of array on the game board
+      // Add currentPlayer token to event.target
+      $(event.target).text(currentPlayer)
+      gameArray[id] = currentPlayer
+      console.log(gameArray)
+      // log if a person won
+      findWinner()
+      if (event.target.innerHTML !== 'X' && event.target.innerHTML !== 'O') {
+        if (currentPlayer === 'X') {
+          currentPlayer = 'O'
+        } else {
+          currentPlayer = 'X'
+        }
+      }
+    })
+  }
