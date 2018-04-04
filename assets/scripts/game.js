@@ -5,6 +5,7 @@ let gameArray = ['', '', '', '', '', '', '', '', '']
 const newGame = function () {
   gameArray = ['', '', '', '', '', '', '', '', '']
 }
+
 // Create an array of winning combinations
 // const winningCombo = [
 //   [0, 1, 2], // Player wins top row
@@ -36,13 +37,20 @@ const addHandlers = function () {
       findWinner() // log if a person won
       if (currentPlayer === 'X') { // change player
         currentPlayer = 'O'
+        onPlayerMove()
       } else {
         currentPlayer = 'X'
+        onPlayerMove()
       }
     } else {
       console.log('This spot is taken!')
     }
   })
+}
+
+const onPlayerMove = function () {
+  console.log('Player ' + currentPlayer + "'s turn")
+  $('.playerMove').html('Player ' + currentPlayer + "'s turn")
 }
 
 const findWinner = function () {
