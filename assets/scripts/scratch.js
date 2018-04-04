@@ -208,3 +208,59 @@ const addHandlers = function () {
       }
     })
   }
+
+
+
+  let currentPlayer = 'X' // Define currentPlayer to start as X
+  // Makes the table clickable
+  const addHandlers = function () {
+    $('.cell').on('click', function () {
+      event.preventDefault() // Prevent default action
+      console.log('You clicked me!', event.target) // Log the event.target
+      const id = this.id
+      console.log(id)
+      // ('#' + id).text(this.id)
+      // Displays ID of array on the game board
+      // Add currentPlayer token to event.target
+      $(event.target).text(currentPlayer)
+      gameArray[id] = currentPlayer
+      console.log(gameArray)
+      // log if a person won
+      findWinner()
+      if (event.target.innerHTML !== 'X' && event.target.innerHTML !== 'O') {
+      } else {
+        takeTurns()
+      }
+    })
+  }
+
+  const takeTurns = function () {
+    if (event.target.innerHTML !== 'X' && event.target.innerHTML !== 'O') {
+      if (currentPlayer === 'X') {
+        currentPlayer = 'O'
+      } else {
+        currentPlayer = 'X'
+      }
+    }
+    const findWinner = function () {
+      // If the game board array has the winning combo of all X's in [0,1,2]
+      if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[1] !== '') {
+        console.log('Player ' + gameArray[0] + ' Wins!')
+      } else if (gameArray[0] === gameArray[4] && gameArray[4] === gameArray[8] && gameArray[4] !== '') {
+        console.log('Player ' + gameArray[0] + ' Wins!')
+      } else if (gameArray[2] === gameArray[5] && gameArray[5] === gameArray[8] && gameArray[5] !== '') {
+        console.log('Player ' + gameArray[2] + ' Wins!')
+      } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[3] !== '') {
+        console.log('Player ' + gameArray[0] + ' Wins!')
+      } else if (gameArray[6] === gameArray[7] && gameArray[7] === gameArray[8] && gameArray[7] !== '') {
+        console.log('Player ' + gameArray[6] + ' Wins!')
+      } else if (gameArray[3] === gameArray[4] && gameArray[4] === gameArray[5] && gameArray[4] !== '') {
+        console.log('Player ' + gameArray[3] + ' Wins!')
+      } else if (gameArray[1] === gameArray[4] && gameArray[4] === gameArray[7] && gameArray[4] !== '') {
+        console.log('Player ' + gameArray[1] + ' Wins!')
+      } else if (gameArray[2] === gameArray[4] && gameArray[4] === gameArray[6] && gameArray[4] !== '') {
+        console.log('Player ' + gameArray[2] + ' Wins!')
+      } else {
+        console.log('Keep playing!')
+      }
+    }
