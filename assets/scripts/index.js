@@ -5,7 +5,10 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const gameApi = require('./events')
+const gameBoard = require('./game')
 
 $(() => {
-  // your JS code goes here
+  gameApi.addHandlers()
+  gameBoard.addHandlers()
 })
