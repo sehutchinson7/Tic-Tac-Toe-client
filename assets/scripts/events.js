@@ -1,4 +1,5 @@
 const getFormFields = require('../../lib/get-form-fields')
+const game = require('./game')
 
 const api = require('./api')
 const store = require('./store')
@@ -44,6 +45,7 @@ const onNewGame = function (event) {
   event.preventDefault()
   console.log('clear board successful')
   $('.cell').html('')
+  game.newGame()
 }
 
 const addHandlers = () => {
