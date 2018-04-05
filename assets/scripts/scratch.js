@@ -264,3 +264,67 @@ const addHandlers = function () {
         console.log('Keep playing!')
       }
     }
+
+    const onIndex = function (event) {
+      event.preventDefault()
+      console.log('onIndex ran')
+      api.index()
+    }
+
+    const index = function () {
+      return $.ajax({
+        url: config.apiUrl + `/games[?over=]`,
+        method: 'GET',
+        headers: {
+          contentType: 'application/json',
+          Authorization: 'Token token' + store.user.token
+        }
+      })
+    }
+
+
+    const show = function (game) {
+      return $.ajax({
+        url: config.apirUrl + `/games/:id` + game.id,
+        method: 'GET',
+        headers: {
+          contentType: 'application/json',
+          Authorization: 'Token token=' + store.user.token
+        }
+
+      })
+    }
+
+    const update = function (data) {
+      console.log('data: ', data)
+      return $.ajax({
+        url: config.apiUrl + `/games/:id` + data.game.id,
+        method: 'PATCH',
+        headers: {
+          contentType: 'application/json',
+          Authorization: 'Token token=' + store.user.token
+        },
+        data
+      })
+    }
+
+    const onCreateGame = function (event) {
+      event.preventDefault()
+      console.log('onCreate ran')
+      const data = getFormFields(event.target)
+      store.game=data.game
+      console.log(store.game)
+      api.createGame(data)
+    }
+
+    const createGame = function (data) {
+      return $.ajax({
+        url: config.apiUrl + '/games',
+        method: 'POST',
+        headers: {
+          contentType: 'application/json',
+          Authorization: 'Token token=' + store.user.token
+        },
+        data
+      })
+    }
