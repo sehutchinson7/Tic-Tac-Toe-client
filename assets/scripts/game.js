@@ -59,6 +59,7 @@ const onTieGame = function () {
 
 const onWinner = function () {
   $('.playerMove').html('Player ' + currentPlayer + ' wins!')
+  $('#game-board').hide()
 }
 
 const onPlayerMove = function () {
@@ -104,7 +105,9 @@ const findWinner = function () {
     // console.log('Player ' + gameArray[2] + ' Wins!' + ' Winning combo diagonal 90 degree') // [2, 4, 6]
   } else if (gameArray[0] !== '' && gameArray[1] !== '' && gameArray[2] !== '' && gameArray[3] !== '' && gameArray[4] !== '' && gameArray[5] !== '' && gameArray[6] !== '' && gameArray[7] !== '' && gameArray[8] !== '') {
     onTieGame()
+    console.log('Tie Game')
   } else {
+    console.log('Keep playing!')
     return false
   }
 }

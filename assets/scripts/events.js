@@ -2,15 +2,16 @@ const getFormFields = require('../../lib/get-form-fields')
 const game = require('./game')
 
 const api = require('./api')
-const store = require('./store')
+const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
-  console.log(onSignUp)
 
   const data = getFormFields(this)
   api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = function (event) {
@@ -18,14 +19,9 @@ const onSignIn = function (event) {
   console.log('sign in ran!')
 
   const data = getFormFields(this)
-  api.signIn(data).then(signInSuccess)
-}
-
-const signInSuccess = function (data) {
-  $('#message').text('Signed in successfully')
-  $('#message').css('background-color', 'green')
-  console.log('signInSuccess ran. Data is ', data)
-  store.user = data.user
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
 }
 
 const onChangePassword = function (event) {
@@ -34,18 +30,24 @@ const onChangePassword = function (event) {
 
   const data = getFormFields(this)
   api.changePassword(data)
+    .then(ui.changedPasswordSuccess)
+    .catch(ui.changePasswordFailure)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out ran')
   api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const onNewGame = function (event) {
   event.preventDefault()
   console.log('clear board successful')
   $('.cell').html('')
+  $('#game-board').show()
+  $('.playerMove').html('Player 1 Start Game')
   game.newGame()
 }
 
