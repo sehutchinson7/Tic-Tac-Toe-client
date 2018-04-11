@@ -41,6 +41,7 @@ const onChangePassword = function (event) {
 const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out ran')
+  $('.cell').html('') // Prevents next user from seeing previous user's board when signing i
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
@@ -55,26 +56,12 @@ const onNewGame = function (event) {
   game.newGame()
 }
 
-// const onGetGameData = function () {
-//  $.ajax({
-//    url: config.apiUrl + '/games',
-//    method: 'GET',
-//    headers: {
-//      Authorization: `Token token=${store.user.token}`
-//    }
-//  })
-//  .then(function (data)) { // accept callbacks
-//    })
-//  .catch(console.error)
-//}
-
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#new-game').on('click', onNewGame)
-  //$('#get-games').on('click', onGetGameData)
 }
 
 module.exports = {
