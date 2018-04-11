@@ -3,13 +3,14 @@ const game = require('./game')
 
 const api = require('./api')
 const ui = require('./ui')
+//const config = require('./config')
 
 const onSignUp = function (event) {
   event.preventDefault()
   console.log('sign up ran!')
 
   const data = getFormFields(this)
-
+  document.getElementById('sign-up').reset()
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -54,12 +55,26 @@ const onNewGame = function (event) {
   game.newGame()
 }
 
+// const onGetGameData = function () {
+//  $.ajax({
+//    url: config.apiUrl + '/games',
+//    method: 'GET',
+//    headers: {
+//      Authorization: `Token token=${store.user.token}`
+//    }
+//  })
+//  .then(function (data)) { // accept callbacks
+//    })
+//  .catch(console.error)
+//}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#new-game').on('click', onNewGame)
+  //$('#get-games').on('click', onGetGameData)
 }
 
 module.exports = {
