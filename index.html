@@ -13,50 +13,47 @@
     </head>
     <body>
       <h1>Tic-Tac-Toe</h1>
-      <h4>Haven't registered? Sign up now</h4>
       <form id="sign-up" class="border">
         <fieldset>
-          <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
+          <legend>Sign up</legend>
+          <input type="email" name="credentials[email]" placeholder="Email">
           <input type="password" name="credentials[password]" placeholder="Password">
           <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit" value="Sign up!">
         </fieldset>
       </form>
 
-      <h4>Already registered? Please sign in with your credentials.</h4>
       <form id="sign-in" class="border">
         <fieldset>
-            <legend>Sign in!</legend>
+            <legend>Sign in</legend>
             <input type="text" name="credentials[email]" placeholder="Email">
             <input type="password" name="credentials[password]" placeholder="Password">
             <input type="submit" value="Sign In!">
         </fieldset>
       </form>
 
-      <form id="change-password" class="border">
+      <form id="change-password" class="border hidden">
         <fieldset>
-          <legend>Change Password!</legend>
+          <legend>Change Password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
           <input type="password" name="passwords[new]" placeholder="New Password">
           <input type="submit" value="Change Password!">
         </fieldset>
       </form>
 
-      <form id="sign-out">
+      <form id="sign-out" class="hidden">
         <fieldset>
-          <legend>Sign Out!</legend>
           <input type="submit" value="Sign out">
         </fieldset>
       </form>
 
-      <form id="new-game">
+      <form id="new-game" class="hidden">
         <fieldset>
           <input type="submit" value="New game">
         </fieldset>
       </form>
 
-      <table id="game-board">
+      <table class="hidden" id="game-board">
         <tr>
           <td class="cell" id="0"></td>
           <td class="cell" id="1"></td>
@@ -73,7 +70,7 @@
           <td class="cell" id="8"></td>
         </tr>
 
-      <div class="playerMove">Player 1 Start Game</div>
+      <div class="playerMove hidden">Player 1 Start Game</div>
       <div class="winner"></div>
       <div id="message"></div>
       </table>

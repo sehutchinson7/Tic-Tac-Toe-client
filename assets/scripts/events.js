@@ -9,6 +9,7 @@ const onSignUp = function (event) {
   console.log('sign up ran!')
 
   const data = getFormFields(this)
+
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -19,6 +20,7 @@ const onSignIn = function (event) {
   console.log('sign in ran!')
 
   const data = getFormFields(this)
+  document.getElementById('sign-in').reset()
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -29,8 +31,9 @@ const onChangePassword = function (event) {
   console.log('change password ran!')
 
   const data = getFormFields(this)
+  document.getElementById('change-password').reset()
   api.changePassword(data)
-    .then(ui.changedPasswordSuccess)
+    .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
 
