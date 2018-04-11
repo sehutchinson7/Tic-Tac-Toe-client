@@ -26,6 +26,7 @@ const signInSuccess = function (data) { // represents what the api is sending ba
   $('.playerMove').removeClass('hidden')
   $('#sign-in').addClass('hidden')
   $('#sign-up').addClass('hidden')
+  $('#get-games').removeClass('hidden')
   //$('#change-password')[0].reset()
   store.user = data.user
 }
@@ -48,6 +49,7 @@ const signOutSuccess = function (data) {
   $('.playerMove').addClass('hidden')
   $('#sign-in').removeClass('hidden')
   $('#sign-up').removeClass('hidden')
+  $('#get-games').addClass('hidden')
 }
 
 const changePasswordSuccess = function (data) {
