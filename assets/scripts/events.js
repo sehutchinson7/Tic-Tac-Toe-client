@@ -42,6 +42,7 @@ const onSignOut = function (event) {
   event.preventDefault()
   console.log('sign out ran')
   $('.cell').html('') // Prevents next user from seeing previous user's board when signing i
+  $('.playerMove').html('Player 1 Start Game')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
