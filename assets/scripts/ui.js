@@ -19,7 +19,7 @@ const signInSuccess = function (data) { // represents what the api is sending ba
   $('#message').css('background-color', 'green')
   console.log('signInSuccess ran. Data is ', data)
   //setTimeout(() => $('#message').text('Successfully signed in'), 2000)
-  $('#game-board').removeClass('hidden')
+  //$('#game-board').removeClass('hidden')
   $('#change-password').removeClass('hidden')
   $('#sign-out').removeClass('hidden')
   $('#new-game').removeClass('hidden')

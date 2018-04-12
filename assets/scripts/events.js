@@ -52,6 +52,7 @@ const onNewGame = function (event) {
   console.log('clear board successful')
   $('.cell').html('')
   $('#game-board').show()
+  $('#game-board').removeClass('hidden')
   $('.playerMove').html('Player 1 Start Game')
   game.newGame()
 }
