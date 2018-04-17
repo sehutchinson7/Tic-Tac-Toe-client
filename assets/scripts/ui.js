@@ -63,6 +63,10 @@ const changePasswordFailure = function (data) {
   $('#message').css('background-color', 'red')
   console.log('signInSuccess ran. Data is ', data)
 }
+const newGameSuccess = function (data) {
+  store.game = data.game
+  console.log('newGameSuccess ran', data)
+}
 
 module.exports = {
   signUpSuccess,
@@ -71,5 +75,6 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  newGameSuccess
 }

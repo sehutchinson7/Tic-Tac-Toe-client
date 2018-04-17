@@ -56,6 +56,8 @@ const onNewGame = function (event) {
   $('#game-board').removeClass('hidden')
   $('.playerMove').html('Player 1 Start Game')
   game.newGame()
+  api.startGame()
+    .then(ui.newGameSuccess)
 }
 
 const addHandlers = () => {

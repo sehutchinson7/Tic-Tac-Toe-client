@@ -47,11 +47,7 @@
         </fieldset>
       </form>
 
-      <form id="new-game" class="hidden">
-        <fieldset>
-          <input type="submit" value="New game">
-        </fieldset>
-      </form>
+      <div class="playerMove hidden">Player 1 Start Game</div>
 
       <table class="hidden" id="game-board">
         <tr>
@@ -69,11 +65,15 @@
           <td class="cell" id="7"></td>
           <td class="cell" id="8"></td>
         </tr>
+      </table>
 
-      <div class="playerMove hidden">Player 1 Start Game</div>
       <div class="winner"></div>
       <div id="message"></div>
-      </table>
+      <form id="new-game" class="hidden">
+        <fieldset>
+          <input type="submit" value="New game">
+        </fieldset>
+      </form>
       <button id="get-games" class="hidden">Fetch game data</button>
     </body>
 </html>
