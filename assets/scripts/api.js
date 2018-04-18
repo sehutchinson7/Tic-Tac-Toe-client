@@ -55,10 +55,35 @@ const startGame = function () {
   })
 }
 
+const getGameData = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
+
+const updateGameData = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  startGame
+  startGame,
+  getGameData,
+  updateGameData
 }

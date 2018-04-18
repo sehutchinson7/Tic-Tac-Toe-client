@@ -3,6 +3,7 @@ const game = require('./game')
 
 const api = require('./api')
 const ui = require('./ui')
+//const store = require('./store')
 //const config = require('./config')
 
 const onSignUp = function (event) {
@@ -60,12 +61,28 @@ const onNewGame = function (event) {
     .then(ui.newGameSuccess)
 }
 
+const onGetGameData = function () {
+  event.preventDefault()
+  api.getGameData()
+    .then(ui.getGameDataSuccess)
+    .catch(console.error)
+}
+
+const onUpdateGameData = function () {
+  event.preventDefault()
+  api.updateGameData()
+    .then(ui.updateGameDateSuccess)
+    .catch(console.error)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#new-game').on('click', onNewGame)
+  $('#get-games').on('click', onGetGameData)
+  //$('#get-games').on('click', onUpdateGameData)
 }
 
 module.exports = {

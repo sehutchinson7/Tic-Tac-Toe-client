@@ -1,3 +1,6 @@
+const store = require('./store')
+const api = require('./api')
+const ui = require('./ui')
 // Create an empty array to represent a 3x3 game board
 
 let gameArray = ['', '', '', '', '', '', '', '', '']
@@ -25,13 +28,14 @@ let currentPlayer = 'X' // Define currentPlayer to start as X
 const addHandlers = function () {
   $('.cell').on('click', function (event) {
     event.preventDefault() // Prevent default action
-    // console.log('You clicked me!', event.target) // Log the event.target
+    //console.log('You clicked me!', event.target) // Log the event.target
     // const id = this.id
     // ('#' + id).text(this.id)
     // Displays ID of array on the game board
     // Add currentPlayer token to event.target
     if ($(event.target).text() === '') { // If the space is empty
       const id = event.target.id // Add currentPlayer to JS board array
+      console.log(event.target.id)
       gameArray[id] = currentPlayer
       $(event.target).text(currentPlayer) // Adc currentPlayer to HTMLL board
       if (findWinner() === false) {
@@ -46,6 +50,7 @@ const addHandlers = function () {
 const takeTurns = function () {
   if (currentPlayer === 'X') { // change player
     currentPlayer = 'O'
+    onUpdateGameData()
     onPlayerMove()
   } else {
     currentPlayer = 'X'
@@ -112,7 +117,26 @@ const findWinner = function () {
   }
 }
 
+const patchObject = {
+  'game': {
+    'cell': {
+      'index': '',
+      'value': ''
+    },
+    'over': false
+  }
+}
+
+const onUpdateGameData = function () {
+  event.preventDefault()
+  api.updateGameData(patchObject)
+    .then(ui.updateGameDateSuccess)
+    .catch(console.error)
+}
+
 module.exports = {
   addHandlers,
-  newGame
+  newGame,
+  patchObject,
+  onUpdateGameData
 }

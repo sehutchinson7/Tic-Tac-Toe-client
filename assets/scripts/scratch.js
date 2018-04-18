@@ -328,3 +328,10 @@ const addHandlers = function () {
         data
       })
     }
+
+    const gameState = function () {
+      if (findWinner === true) {
+        store.game.over = true
+      } else {
+        store.game.over = false
+    }
