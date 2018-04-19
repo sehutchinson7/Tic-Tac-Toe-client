@@ -73,11 +73,6 @@ const getGameDataSuccess = function (data) {
   console.log('data is', data)
 }
 
-const updateGameDataSuccess = function (data) {
-  console.log('data is', data)
-  //store.event.target.id = data
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -87,6 +82,5 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   newGameSuccess,
-  getGameDataSuccess,
-  updateGameDataSuccess
+  getGameDataSuccess
 }

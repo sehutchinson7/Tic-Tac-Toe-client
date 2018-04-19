@@ -24,11 +24,23 @@ const newGame = function () {
 // const playerOne = 'X'
 // const playerTwo = 'O'
 let currentPlayer = 'X' // Define currentPlayer to start as X
+
+// declare patchObject with default empty values
+const patchObject = {
+  'game': {
+    'cell': {
+      'index': '',
+      'value': ''
+    },
+    'over': false
+  }
+}
+
 // Makes the table clickable
 const addHandlers = function () {
   $('.cell').on('click', function (event) {
     event.preventDefault() // Prevent default action
-    //console.log('You clicked me!', event.target) // Log the event.target
+    // console.log('You clicked me!', event.target) // Log the event.target
     // const id = this.id
     // ('#' + id).text(this.id)
     // Displays ID of array on the game board
@@ -39,6 +51,10 @@ const addHandlers = function () {
       gameArray[id] = currentPlayer
       $(event.target).text(currentPlayer) // Adc currentPlayer to HTMLL board
       if (findWinner() === false) {
+        // update the patch object with the game data
+        patchObject.game.cell.index = id
+        patchObject.game.cell.value = currentPlayer
+        // then run takeTurns
         takeTurns()
       }
     } else {
@@ -50,10 +66,13 @@ const addHandlers = function () {
 const takeTurns = function () {
   if (currentPlayer === 'X') { // change player
     currentPlayer = 'O'
-    onUpdateGameData()
+    console.log(patchObject)
+    onUpdateGameData() // patch request stops working in the console after one round
     onPlayerMove()
   } else {
     currentPlayer = 'X'
+    console.log(patchObject)
+    onUpdateGameData() // only does patch request 4 times
     onPlayerMove()
   }
 }
@@ -117,21 +136,10 @@ const findWinner = function () {
   }
 }
 
-const patchObject = {
-  'game': {
-    'cell': {
-      'index': '',
-      'value': ''
-    },
-    'over': false
-  }
-}
-
 const onUpdateGameData = function () {
   event.preventDefault()
   api.updateGameData(patchObject)
-    .then(ui.updateGameDateSuccess)
-    .catch(console.error)
+  console.log("Here's your api patch", patchObject)
 }
 
 module.exports = {
