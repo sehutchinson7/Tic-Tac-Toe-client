@@ -70,7 +70,8 @@ const newGameSuccess = function (data) {
 }
 
 const getGameDataSuccess = function (data) {
-  console.log('data is', data)
+  $('.total').text('')
+  $('.total').append(data.games.length)
 }
 
 module.exports = {
