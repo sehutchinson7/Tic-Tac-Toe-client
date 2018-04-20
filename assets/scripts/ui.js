@@ -78,6 +78,7 @@ const newGameSuccess = function (data) {
 const getGameDataSuccess = function (data) {
   $('.total').text('')
   $('.total').append(data.games.length)
+  $('.total').removeClass('hidden')
 }
 
 module.exports = {
