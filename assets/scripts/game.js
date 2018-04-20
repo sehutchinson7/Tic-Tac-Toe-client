@@ -6,6 +6,7 @@ const ui = require('./ui')
 let gameArray = ['', '', '', '', '', '', '', '', '']
 
 const newGame = function () {
+  currentPlayer = 'X'
   gameArray = ['', '', '', '', '', '', '', '', '']
 }
 

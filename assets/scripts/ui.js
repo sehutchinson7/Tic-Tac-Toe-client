@@ -73,6 +73,7 @@ const changePasswordFailure = function (data) {
 const newGameSuccess = function (data) {
   console.log('newGameSuccess ran', data)
   store.game = data.game
+  $('.total').text('')
 }
 
 const getGameDataSuccess = function (data) {
