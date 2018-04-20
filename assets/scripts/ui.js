@@ -55,6 +55,7 @@ const signOutSuccess = function (data) {
   $('input[type=email]').val('')
   $('input[type=text]').val('')
   $('input[type=password]').val('')
+  $('.total').addClass('hidden') // hide total games played upon sign out
 }
 
 const changePasswordSuccess = function (data) {
