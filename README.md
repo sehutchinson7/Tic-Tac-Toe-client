@@ -1,4 +1,4 @@
-<h1> **Tic-Tac-Toe**</h1>
+<h1><b>Tic-Tac-Toe<b></h1>
 <p> View and play my game here: https://sehutchinson7.github.io/tic-tac-toe-client/
 <h3> Background: </h3>
 <p> The goal of this project is to develop a web application based off the popular, well-known game of tic-tac-toe. This project designs a front-end web application that interacts with a game API. The game API was developed as part of General Assembly's Web Development Immersive curriculum. For more details please see https://git.generalassemb.ly/ga-wdi-boston/game-project.
