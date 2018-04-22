@@ -6,7 +6,7 @@ const ui = require('./ui')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('sign up ran!')
+  // console.log('sign up ran!')
 
   const data = getFormFields(this)
   document.getElementById('sign-up').reset()
@@ -17,7 +17,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran!')
+  // console.log('sign in ran!')
 
   const data = getFormFields(this)
   document.getElementById('sign-in').reset()
@@ -28,7 +28,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('change password ran!')
+  // console.log('change password ran!')
 
   const data = getFormFields(this)
   document.getElementById('change-password').reset()
@@ -39,7 +39,7 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('sign out ran')
+  // console.log('sign out ran')
   $('.cell').html('') // Prevents next user from seeing previous user's board when signing i
   $('.playerMove').html('Player 1 Start Game')
   api.signOut()
@@ -49,7 +49,7 @@ const onSignOut = function (event) {
 
 const onNewGame = function (event) {
   event.preventDefault()
-  console.log('clear board successful')
+  // console.log('clear board successful')
   $('.cell').html('')
   $('#game-board').show()
   $('#game-board').removeClass('hidden')
@@ -63,7 +63,7 @@ const onGetGameData = function () {
   event.preventDefault()
   api.getGameData()
     .then(ui.getGameDataSuccess)
-    .catch(console.error)
+    // .catch(console.error)
 }
 
 const addHandlers = () => {

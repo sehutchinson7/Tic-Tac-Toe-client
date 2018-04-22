@@ -10,20 +10,6 @@ const newGame = function () {
   gameArray = ['', '', '', '', '', '', '', '', '']
 }
 
-// Create an array of winning combinations
-// const winningCombo = [
-//   [0, 1, 2], // Player wins top row
-//   [0, 4, 8], // Player wins diagonally
-//   [2, 5, 8], // Player wins far right column
-//   [0, 3, 6], // Player wins far left column
-//   [6, 7, 8], // Player wins last row
-//   [3, 4, 5], // Player wins middle row
-//   [1, 4, 7], // Player wins middle column
-//   [2, 4, 6] // Player wins diagonally 45 degree angle
-// ]
-// Define Player 1 as X and Player 2 as O
-// const playerOne = 'X'
-// const playerTwo = 'O'
 let currentPlayer = 'X' // Define currentPlayer to start as X
 
 // declare patchObject with default empty values
@@ -48,7 +34,7 @@ const addHandlers = function () {
     // Add currentPlayer token to event.target
     if ($(event.target).text() === '') { // If the space is empty
       const id = event.target.id // Add currentPlayer to JS board array
-      console.log(event.target.id)
+      // console.log(event.target.id)
       gameArray[id] = currentPlayer
       $(event.target).text(currentPlayer) // Adc currentPlayer to HTMLL board
       if (findWinner() === false) {
@@ -67,13 +53,13 @@ const addHandlers = function () {
 const takeTurns = function () {
   if (currentPlayer === 'X') { // change player
     currentPlayer = 'O'
-    console.log(patchObject)
-    onUpdateGameData() // patch request stops working in the console after one round
+    // console.log(patchObject)
+    onUpdateGameData()
     onPlayerMove()
   } else {
     currentPlayer = 'X'
-    console.log(patchObject)
-    onUpdateGameData() // only does patch request 4 times
+    // console.log(patchObject)
+    onUpdateGameData()
     onPlayerMove()
   }
 }
@@ -130,9 +116,9 @@ const findWinner = function () {
     // console.log('Player ' + gameArray[2] + ' Wins!' + ' Winning combo diagonal 90 degree') // [2, 4, 6]
   } else if (gameArray[0] !== '' && gameArray[1] !== '' && gameArray[2] !== '' && gameArray[3] !== '' && gameArray[4] !== '' && gameArray[5] !== '' && gameArray[6] !== '' && gameArray[7] !== '' && gameArray[8] !== '') {
     onTieGame()
-    console.log('Tie Game')
+    // console.log('Tie Game')
   } else {
-    console.log('Keep playing!')
+    // console.log('Keep playing!')
     return false
   }
 }
@@ -140,7 +126,7 @@ const findWinner = function () {
 const onUpdateGameData = function () {
   event.preventDefault()
   api.updateGameData(patchObject)
-  console.log("Here's your api patch", patchObject)
+  // console.log("Here's your api patch", patchObject)
 }
 
 module.exports = {
