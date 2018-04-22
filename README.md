@@ -31,6 +31,6 @@
   <li> Wireframe Revised: https://imgur.com/ngUP4kT </li>
 </ul>
 <h3> Next Steps: </h3>
-<p> The objective of this game was to create a functional web app outlined above. The next steps will focus on stylig using CSS/SASS in order to create a tic-tac-toe experience that is not only functional, but eye catching. Another goal for this project is to introduce multi-player games so two players can sign in and play from different devices. This development will also introduce media queries for mobile play. These changes will enhance the user experience and build on the web development skills listed above.
+<p> The objective of this game was to create a functional web app outlined above. The next steps will focus on styling using CSS/SASS in order to create a tic-tac-toe experience that is not only functional, but eye catching. Another goal for this project is to introduce multi-player games so two players can sign in and play from different devices. This development will also introduce media queries for mobile play. These changes will enhance the user experience and build on the web development skills listed above.
 
 For inquiries, you can contact this developer at sara@hutchinsongis.com
