@@ -15,7 +15,7 @@
   <li>Provide user with UI feedback.
   <li>Store user data to the game API using AJAX requests (POST, GET, PATCH).</li>
 </ul>
-<p> The project provided a challenging experience in learning web development skills and technologies. In order to work through these challenges, the developer utilized white boarding (see: https://imgur.com/1b67d46c-4e10-4e6f-b8a6-5a782d52fcba for organization and planning purposes).
+<p> The project provided a challenging experience in learning web development skills and technologies. In order to work through these challenges, the developer utilized white boarding (see: https://imgur.com/A3GXLSL for organization and planning purposes).
 <h3> Technologies Used: </h3>
 <ul>
   <li>HTML</li>
@@ -37,7 +37,7 @@
 </ul>
 <h3> Wire Frames: </h3>
 <ul>
-  <li> Initial Idea: https://i.imgur.com/Sr1oMd2.png</li>
+  <li> Initial Idea: https://imgur.com/Sr1oMd2</li>
   <li> Wireframe Revised: https://imgur.com/ngUP4kT </li>
 </ul>
 <h3> Next Steps: </h3>
