@@ -4,8 +4,18 @@
 <p> The goal of this project is to develop a web application based off the popular, well-known game of tic-tac-toe. This project designs a front-end web application that interacts with a game API. The game API was developed as part of General Assembly's Web Development Immersive curriculum. For more details please see https://git.generalassemb.ly/ga-wdi-boston/game-project.
 </p>
 <h3> Game Description </h3>
-<p> After a user signs up and signs in, they are able to play a game of tic-tac-toe with their opponent. Once signed in, a user is also given the option of changing their password. The game logic assumes that player X goes first and then alternates turns with their opponent (player O). Each time a user hits the "New Game" button, their game is stored using the game api. A user can keep track of their total games played by clicking the "Get Games button".
+<p> After a user signs up and signs in, they are able to play a game of tic-tac-toe with their opponent. Once signed in, a user is also given the option of changing their password. The game logic assumes that player X goes first and then alternates turns with their opponent (player O). Each time a user hits the "New Game" button, their game is stored using the game api. A user can keep track of their total games played by clicking the "Get Games" button.
 </p>
+<h3> Planning Proces</h3>
+<ul>
+  <li>Utilize wireframes and whiteboarding for planning purposes.
+  <li>Structure basic html/css layout with 3x3 table (each cell has an id 0-8).</li>
+  <li>Set up user forms using api on the front-end with AJAX requests (POST, PATCH, DELETE) and jquery.</li>
+  <li>Set up game logic following project specifications. </li>
+  <li>Provide user with UI feedback.
+  <li>Store user data to the game API using AJAX requests (POST, GET, PATCH).</li>
+</ul>
+<p> The project provided a challenging experience in learning web development skills and technologies. In order to work through these challenges, the developer utilized white boarding (see: https://imgur.com/1b67d46c-4e10-4e6f-b8a6-5a782d52fcba for organization and planning purposes).
 <h3> Technologies Used: </h3>
 <ul>
   <li>HTML</li>
@@ -31,6 +41,8 @@
   <li> Wireframe Revised: https://imgur.com/ngUP4kT </li>
 </ul>
 <h3> Next Steps: </h3>
-<p> The objective of this game was to create a functional web app outlined above. The next steps will focus on styling using CSS/SASS in order to create a tic-tac-toe experience that is not only functional, but eye catching. Another goal for this project is to introduce multi-player games so two players can sign in and play from different devices. This development will also introduce media queries for mobile play. These changes will enhance the user experience and build on the web development skills listed above.
+<p> The objective of this game was to create a functional web app outlined above.
+
+The next steps will focus on styling using CSS/SASS in order to create a tic-tac-toe experience that is not only functional, but eye catching. Another goal for this project is to introduce multi-player games so two players can sign in and play from different devices. This development will also introduce media queries for mobile play. These changes will enhance the user experience and build on the web development skills listed above.
 
 For inquiries, you can contact this developer at sara@hutchinsongis.com
