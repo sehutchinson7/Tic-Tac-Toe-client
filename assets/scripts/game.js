@@ -66,6 +66,7 @@ const takeTurns = function () {
 
 const onTieGame = function () {
   $('.playerMove').html("It's a draw!")
+  $('#game-board').hide()
 }
 
 const onWinner = function () {
